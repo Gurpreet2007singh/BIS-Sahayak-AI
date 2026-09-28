@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>BIS Sahayak AI</title><meta name="description" content="Intelligent assistant for Indian Standards, BIS services and business compliance"><link rel="stylesheet" href="/style.css"></head>
+<body>
+<div class="app">
+<aside class="sidebar"><a class="brand" href="#home"><span>B</span><div>BIS Sahayak<small>AI</small></div></a><div class="sideNav">
+<button data-page="home" class="active">Overview</button><button data-page="assistant">AI Assistant</button><button data-page="documents">Documents</button><button data-page="compliance">Compliance</button><button data-page="sources">Sources & Tools</button>
+</div><div class="sideBottom"><button id="themeBtn">Theme</button><button onclick="openAuth()">Account</button></div></aside>
+<main class="content">
+<header class="top"><div><span id="pageKicker">BIS SAHAYAK AI</span><h1 id="pageTitle">Business command center</h1></div><div class="topActions"><span id="connection" class="pill">Checking connection…</span><button class="account" onclick="openAuth()">Sign in</button></div></header>
+
+<section id="home" class="page activePage">
+<div class="hero"><div><label>INTELLIGENT COMPLIANCE ASSISTANT</label><h2>Know what matters.<br><span>Know what to do next.</span></h2><p>BIS Sahayak connects AI guidance, secure document tracking, compliance actions and verified BIS sources in one workspace.</p><button class="primary" onclick="showPage('assistant')">Ask BIS Sahayak →</button><button class="secondary" onclick="showPage('documents')">Manage documents</button></div><div class="heroAI"><div class="signal"></div><label>AI STATUS</label><h3>Online + Offline ready</h3><p>Online: AI and configured live sources. Offline: local safety-aware assistant and cached workspace.</p><div class="miniFlow"><i>Question</i><b>→</b><i>Evidence</i><b>→</b><i>Guidance</i></div></div></div>
+<div class="quick"><button onclick="showPage('assistant');quick('What should I verify for my product?')"><b>Find applicable standard</b><small>Product → evidence → next step</small></button><button onclick="showPage('documents')"><b>Document vault</b><small>Track validity and renewal</small></button><button onclick="showPage('compliance')"><b>Compliance status</b><small>See what needs action</small></button><button onclick="showPage('sources')"><b>Live sources</b><small>Verify current information</small></button></div>
+<div class="cards"><article><small>AI</small><h3>Situation-aware answers</h3><p>The assistant identifies whether you need standards, certification, testing, documents or a next action.</p></article><article><small>SECURITY</small><h3>Private workspace</h3><p>Authentication, protected APIs, server-side secrets, rate limits and controlled document access.</p></article><article><small>LANGUAGE</small><h3>45-language architecture</h3><p>Language routing is separated from business logic so multilingual AI can be connected without changing the application.</p></article></div>
+</section>
+
+<section id="assistant" class="page">
+<div class="pageIntro"><div><label>AI ASSISTANT</label><h2>Ask anything about BIS</h2><p>Choose online intelligence when connected. Offline mode remains available when external services are unavailable.</p></div><select id="lang"><option value="en">English</option><option value="hi">Hindi</option><option value="pa">Punjabi</option><option value="auto">Auto detect</option></select></div>
+<div class="chatLayout"><div class="chatTools"><button onclick="quick('Help me find the applicable Indian Standard for my product.')">Applicable standard</button><button onclick="quick('Give me a certification preparation checklist.')">Certification</button><button onclick="quick('How should I check testing laboratory requirements?')">Testing</button><button onclick="quick('Explain hallmarking for a consumer.')">Hallmarking</button><button onclick="quick('Review what I should do next for my business compliance.')">Business guidance</button><label class="switch"><input id="liveToggle" type="checkbox" checked><span></span> Use live sources when available</label></div><div class="chat"><div id="messages"><div class="bubble bot"><b>BIS Sahayak</b><p>Tell me what you are trying to do. I’ll give you a clear next action and tell you when verification is required.</p></div></div><form id="chatForm"><input id="chatInput" placeholder="Example: I manufacture an electrical product. What should I verify?"><button>Send</button></form></div></div>
+</section>
+
+<section id="documents" class="page">
+<div class="pageIntro"><div><label>SECURE DOCUMENT VAULT</label><h2>Your business documents</h2><p>Track document state, expiry and required action from one place.</p></div><button class="primary" onclick="document.getElementById('file').click()">Upload document</button><input id="file" type="file" hidden accept=".pdf,.txt,.png,.jpg,.jpeg"></div>
+<div class="stats" id="docStats"></div><div class="tableWrap"><table><thead><tr><th>Document</th><th>Status</th><th>Expiry</th><th>Action</th></tr></thead><tbody id="docs"></tbody></table></div>
+</section>
+
+<section id="compliance" class="page">
+<div class="pageIntro"><div><label>BUSINESS COMPLIANCE</label><h2>What needs attention?</h2><p>Keep recurring compliance work visible instead of remembering it manually.</p></div><button class="primary" onclick="addCompliance()">+ Add task</button></div>
+<div class="stats" id="compStats"></div><div class="taskGrid" id="tasks"></div>
+</section>
+
+<section id="sources" class="page">
+<div class="pageIntro"><div><label>SOURCES & TOOLS</label><h2>Verify and investigate</h2><p>Official BIS links are always visible. A configurable live-search connector can add current web results when enabled.</p></div><button class="secondary" onclick="liveSearch()">Run live search</button></div>
+<div id="sourceGrid" class="sourceGrid"></div><div id="liveResults" class="liveResults"></div>
+</section>
+</main></div>
+
+<div id="auth" class="modal"><div class="auth"><button class="x" onclick="closeAuth()">×</button><label>SECURE ACCOUNT</label><h2 id="authTitle">Sign in</h2><input id="name" placeholder="Full name" style="display:none"><input id="email" placeholder="Email"><input id="password" type="password" placeholder="Password (8+ characters)"><button class="primary full" onclick="submitAuth()">Continue</button><p id="authMsg"></p><a onclick="toggleAuth()">Create an account</a></div></div>
+<script src="/app.js"></script></body></html>

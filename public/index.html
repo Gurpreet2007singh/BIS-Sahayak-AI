@@ -1,0 +1,1180 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#071a45">
+  <meta name="description" content="BIS Sahayak AI — intelligent guidance for Indian Standards, BIS services and business compliance.">
+  <title>BIS Sahayak AI — Business Command Center</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+<div class="app-shell">
+
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+
+  <!-- ================= SIDEBAR ================= -->
+
+  <aside class="sidebar" id="sidebar" aria-label="Primary navigation">
+
+    <div class="brand-row">
+
+      <button
+        class="icon-btn mobile-only"
+        id="closeSidebar"
+        aria-label="Close navigation">
+        ×
+      </button>
+
+      <a
+        class="brand"
+        href="#home"
+        data-page="home"
+        aria-label="BIS Sahayak home">
+
+        <span class="brand-mark">
+          <img
+            src="/assets/bis-sahayak-logo.png"
+            alt="BIS Sahayak">
+        </span>
+
+        <span class="brand-copy">
+          <b>BIS Sahayak</b>
+          <small>AI BUSINESS ASSISTANT</small>
+        </span>
+
+      </a>
+
+    </div>
+
+
+    <div class="nav-label">
+      WORKSPACE
+    </div>
+
+    <nav class="side-nav">
+
+      <button data-page="home" class="nav-item">
+        <span class="nav-icon">⌂</span>
+        <span>Overview</span>
+      </button>
+
+      <button data-page="assistant" class="nav-item">
+        <span class="nav-icon">✦</span>
+        <span>AI Assistant</span>
+        <em>AI</em>
+      </button>
+
+      <button data-page="documents" class="nav-item">
+        <span class="nav-icon">▤</span>
+        <span>Documents</span>
+      </button>
+
+      <button data-page="compliance" class="nav-item">
+        <span class="nav-icon">✓</span>
+        <span>Compliance</span>
+      </button>
+
+      <button data-page="sources" class="nav-item">
+        <span class="nav-icon">◎</span>
+        <span>Sources &amp; Tools</span>
+      </button>
+
+    </nav>
+
+
+    <div class="sidebar-spacer"></div>
+
+
+    <div class="nav-label">
+      PREFERENCES
+    </div>
+
+    <button class="nav-item" id="themeBtn">
+      <span class="nav-icon" id="themeIcon">☾</span>
+      <span>Dark mode</span>
+    </button>
+
+    <button class="nav-item" id="accountSideBtn">
+      <span class="nav-icon">◉</span>
+      <span id="accountSideText">Sign in</span>
+    </button>
+
+
+    <div class="sidebar-foot">
+
+    <img
+    src="/assets/dgs-logo.png"
+    alt="DGS Digital Generic Services">
+      <small>
+        Secure workspace • BIS-focused
+      </small>
+
+    </div>
+
+  </aside>
+
+
+  <!-- ================= MAIN ================= -->
+
+  <main class="main" id="main">
+
+    <!-- TOPBAR -->
+
+    <header class="topbar">
+
+      <div class="topbar-left">
+
+        <button
+          class="icon-btn"
+          id="menuBtn"
+          aria-label="Open navigation"
+          aria-expanded="false">
+          ☰
+        </button>
+
+        <div>
+
+          <div class="eyebrow" id="pageKicker">
+            BIS SAHAYAK AI
+          </div>
+
+          <h1 id="pageTitle">
+            Business command center
+          </h1>
+
+        </div>
+
+      </div>
+
+
+      <div class="topbar-actions">
+
+        <div class="connection-pill" id="connection">
+
+          <span class="pulse-dot"></span>
+
+          <span>
+            Checking…
+          </span>
+
+        </div>
+
+        <button
+          class="avatar-btn"
+          id="accountTopBtn"
+          aria-label="Account">
+          Sign in
+        </button>
+
+      </div>
+
+    </header>
+
+
+    <!-- BACK / HOME -->
+
+    <div class="route-tools">
+
+      <button id="backBtn" class="route-btn">
+        ← Back
+      </button>
+
+      <button id="homeBtn" class="route-btn">
+        ⌂ Home
+      </button>
+
+    </div>
+
+
+    <!-- ================= HOME ================= -->
+
+    <section id="home" class="page active">
+
+      <div class="hero-grid">
+
+        <div class="hero-card">
+
+          <div class="hero-glow"></div>
+
+          <div class="hero-content">
+
+            <div class="status-badge">
+
+              <span class="pulse-dot"></span>
+
+              INTELLIGENT COMPLIANCE WORKSPACE
+
+            </div>
+
+
+            <h2>
+              Know what matters.<br>
+              <span>Know what to do next.</span>
+            </h2>
+
+
+            <p>
+              BIS Sahayak brings AI guidance, document tracking,
+              compliance actions and verified BIS sources into one
+              calm, focused workspace.
+            </p>
+
+
+            <div class="hero-actions">
+
+              <button
+                class="btn primary"
+                data-page="assistant">
+
+                Ask BIS Sahayak
+
+                <span>→</span>
+
+              </button>
+
+
+              <button
+                class="btn ghost"
+                data-page="documents">
+
+                Open document vault
+
+              </button>
+
+            </div>
+
+
+            <div class="trust-row">
+
+              <span>✓ Official-source ready</span>
+
+              <span>✓ Secure account flow</span>
+
+              <span>✓ Multilingual-ready</span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- AI STATUS -->
+
+        <div class="ai-card">
+
+          <div class="ai-orbit">
+
+            <div class="orbit-dot"></div>
+
+            <div class="ai-logo">
+              ✦
+            </div>
+
+          </div>
+
+
+          <div class="mini-eyebrow">
+            AI STATUS
+          </div>
+
+
+          <h3 id="aiStatusTitle">
+            Online + fallback ready
+          </h3>
+
+
+          <p id="aiStatusText">
+            Online AI is used when available.
+            The backend can expose a local fallback when configured.
+          </p>
+
+
+          <div class="flow">
+
+            <span>Question</span>
+
+            <b>→</b>
+
+            <span>Evidence</span>
+
+            <b>→</b>
+
+            <span>Action</span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- QUICK ACTIONS -->
+
+      <div class="section-head">
+
+        <div>
+
+          <div class="eyebrow">
+            QUICK ACTIONS
+          </div>
+
+          <h2>
+            Everything important, one click away
+          </h2>
+
+        </div>
+
+      </div>
+
+
+      <div class="quick-grid">
+
+        <button
+          class="quick-card"
+          data-page="assistant"
+          data-prompt="What should I verify for my product?">
+
+          <span class="quick-icon blue">
+            ✦
+          </span>
+
+          <span>
+
+            <b>
+              Find applicable standard
+            </b>
+
+            <small>
+              Product → evidence → next step
+            </small>
+
+          </span>
+
+          <strong>→</strong>
+
+        </button>
+
+
+        <button
+          class="quick-card"
+          data-page="documents">
+
+          <span class="quick-icon violet">
+            ▤
+          </span>
+
+          <span>
+
+            <b>
+              Document vault
+            </b>
+
+            <small>
+              Track validity and renewal
+            </small>
+
+          </span>
+
+          <strong>→</strong>
+
+        </button>
+
+
+        <button
+          class="quick-card"
+          data-page="compliance">
+
+          <span class="quick-icon green">
+            ✓
+          </span>
+
+          <span>
+
+            <b>
+              Compliance status
+            </b>
+
+            <small>
+              See what needs attention
+            </small>
+
+          </span>
+
+          <strong>→</strong>
+
+        </button>
+
+
+        <button
+          class="quick-card"
+          data-page="sources">
+
+          <span class="quick-icon gold">
+            ◎
+          </span>
+
+          <span>
+
+            <b>
+              Live sources
+            </b>
+
+            <small>
+              Verify current information
+            </small>
+
+          </span>
+
+          <strong>→</strong>
+
+        </button>
+
+      </div>
+
+
+      <!-- FEATURES -->
+
+      <div class="feature-grid">
+
+        <article class="feature-card">
+
+          <span class="feature-num">
+            01
+          </span>
+
+          <h3>
+            Situation-aware AI
+          </h3>
+
+          <p>
+            Ask in natural language and get a clear next action,
+            with source context when the backend provides it.
+          </p>
+
+        </article>
+
+
+        <article class="feature-card">
+
+          <span class="feature-num">
+            02
+          </span>
+
+          <h3>
+            Private workspace
+          </h3>
+
+          <p>
+            Your account token is kept client-side and sent
+            to protected API routes for authenticated dashboard data.
+          </p>
+
+        </article>
+
+
+        <article class="feature-card">
+
+          <span class="feature-num">
+            03
+          </span>
+
+          <h3>
+            Built for real work
+          </h3>
+
+          <p>
+            Documents, compliance tasks and sources stay separated
+            so the interface remains easy to understand.
+          </p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= AI ================= -->
+
+    <section id="assistant" class="page">
+
+      <div class="page-head">
+
+        <div>
+
+          <div class="eyebrow">
+            AI ASSISTANT
+          </div>
+
+          <h2>
+            Ask BIS Sahayak
+          </h2>
+
+          <p>
+            Get concise guidance, then verify important decisions
+            against current official sources.
+          </p>
+
+        </div>
+
+
+        <label class="select-wrap">
+
+          <span>
+            Language
+          </span>
+
+          <select id="lang">
+
+            <option value="en">
+              English
+            </option>
+
+            <option value="hi">
+              Hindi
+            </option>
+
+            <option value="pa">
+              Punjabi
+            </option>
+
+            <option value="auto">
+              Auto detect
+            </option>
+
+          </select>
+
+        </label>
+
+      </div>
+
+
+      <div class="assistant-shell">
+
+        <aside class="assistant-tools">
+
+          <div class="tool-title">
+            START WITH A TEMPLATE
+          </div>
+
+
+          <button
+            class="suggestion"
+            data-prompt="Help me find the applicable Indian Standard for my product.">
+
+            Applicable standard
+
+            <span>→</span>
+
+          </button>
+
+
+          <button
+            class="suggestion"
+            data-prompt="Give me a certification preparation checklist.">
+
+            Certification checklist
+
+            <span>→</span>
+
+          </button>
+
+
+          <button
+            class="suggestion"
+            data-prompt="How should I check testing laboratory requirements?">
+
+            Testing requirements
+
+            <span>→</span>
+
+          </button>
+
+
+          <button
+            class="suggestion"
+            data-prompt="Explain hallmarking for a consumer.">
+
+            Hallmarking
+
+            <span>→</span>
+
+          </button>
+
+
+          <button
+            class="suggestion"
+            data-prompt="Review what I should do next for my business compliance.">
+
+            Business guidance
+
+            <span>→</span>
+
+          </button>
+
+
+          <label class="live-switch">
+
+            <input
+              id="liveToggle"
+              type="checkbox"
+              checked>
+
+            <span></span>
+
+            Use live sources when available
+
+          </label>
+
+
+          <div class="assistant-note">
+
+            <b>
+              Tip
+            </b>
+
+            <p>
+              For the most useful answer, include your product,
+              business activity, location and what you are trying
+              to complete.
+            </p>
+
+          </div>
+
+        </aside>
+
+
+        <div class="chat-panel">
+
+          <div class="chat-header">
+
+            <div class="bot-avatar">
+              ✦
+            </div>
+
+            <div>
+
+              <b>
+                BIS Sahayak
+              </b>
+
+              <small>
+                AI guidance workspace
+              </small>
+
+            </div>
+
+            <span class="online-dot">
+              Online
+            </span>
+
+          </div>
+
+
+          <div
+            class="messages"
+            id="messages">
+
+            <div class="message bot">
+
+              <div class="message-avatar">
+                ✦
+              </div>
+
+              <div class="bubble">
+
+                <b>
+                  BIS Sahayak
+                </b>
+
+                <p>
+                  Hi! Tell me what you are trying to do.
+                  I’ll turn it into a clear next step and flag
+                  where verification is needed.
+                </p>
+
+                <span class="message-time">
+                  Just now
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <form
+            class="chat-form"
+            id="chatForm">
+
+            <input
+              id="chatInput"
+              autocomplete="off"
+              placeholder="Ask about standards, certification, testing, hallmarking…">
+
+            <button
+              class="send-btn"
+              type="submit"
+              aria-label="Send">
+
+              ↑
+
+            </button>
+
+          </form>
+
+
+          <div class="chat-foot">
+            AI guidance can be imperfect.
+            Verify critical requirements against current official BIS information.
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= DOCUMENTS ================= -->
+
+    <section id="documents" class="page">
+
+      <div class="page-head">
+
+        <div>
+
+          <div class="eyebrow">
+            SECURE DOCUMENT VAULT
+          </div>
+
+          <h2>
+            Your business documents
+          </h2>
+
+          <p>
+            Keep important documents visible,
+            searchable and ready for renewal.
+          </p>
+
+        </div>
+
+
+        <button
+          class="btn primary"
+          id="uploadBtn">
+
+          ＋ Upload document
+
+        </button>
+
+        <input
+          id="file"
+          type="file"
+          hidden
+          accept=".pdf,.txt,.png,.jpg,.jpeg,.webp">
+
+      </div>
+
+
+      <div
+        class="stats-grid"
+        id="docStats">
+
+        <div class="stat-card skeleton"></div>
+        <div class="stat-card skeleton"></div>
+        <div class="stat-card skeleton"></div>
+
+      </div>
+
+
+      <div class="table-card">
+
+        <div class="table-head">
+
+          <div>
+
+            <b>
+              Document register
+            </b>
+
+            <small>
+              Authenticated workspace data
+            </small>
+
+          </div>
+
+          <button
+            class="tiny-btn"
+            id="refreshDocs">
+
+            ↻ Refresh
+
+          </button>
+
+        </div>
+
+
+        <div class="table-wrap">
+
+          <table>
+
+            <thead>
+
+              <tr>
+
+                <th>
+                  Document
+                </th>
+
+                <th>
+                  Status
+                </th>
+
+                <th>
+                  Expiry
+                </th>
+
+                <th>
+                  Action
+                </th>
+
+              </tr>
+
+            </thead>
+
+            <tbody id="docs"></tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= COMPLIANCE ================= -->
+
+    <section id="compliance" class="page">
+
+      <div class="page-head">
+
+        <div>
+
+          <div class="eyebrow">
+            BUSINESS COMPLIANCE
+          </div>
+
+          <h2>
+            What needs attention?
+          </h2>
+
+          <p>
+            Turn recurring compliance work into a visible action list.
+          </p>
+
+        </div>
+
+
+        <button
+          class="btn primary"
+          id="addTaskBtn">
+
+          ＋ Add task
+
+        </button>
+
+      </div>
+
+
+      <div
+        class="stats-grid"
+        id="compStats">
+      </div>
+
+
+      <div
+        class="task-grid"
+        id="tasks">
+      </div>
+
+    </section>
+
+
+    <!-- ================= SOURCES ================= -->
+
+    <section id="sources" class="page">
+
+      <div class="page-head">
+
+        <div>
+
+          <div class="eyebrow">
+            SOURCES &amp; TOOLS
+          </div>
+
+          <h2>
+            Verify and investigate
+          </h2>
+
+          <p>
+            Keep official BIS references one click away
+            and use configured live search when available.
+          </p>
+
+        </div>
+
+
+        <button
+          class="btn ghost"
+          id="liveSearchBtn">
+
+          ⌕ Live search
+
+        </button>
+
+      </div>
+
+
+      <div
+        id="sourceGrid"
+        class="source-grid">
+      </div>
+
+
+      <div
+        id="liveResults"
+        class="live-results">
+      </div>
+
+    </section>
+
+  </main>
+
+</div>
+
+
+<!-- ================= TOAST ================= -->
+
+<div
+  class="toast-stack"
+  id="toastStack"
+  aria-live="polite">
+</div>
+
+
+<!-- ================= AUTH MODAL ================= -->
+
+<div
+  class="modal-backdrop"
+  id="authModal"
+  aria-hidden="true">
+
+  <div
+    class="auth-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="authTitle">
+
+    <button
+      class="modal-close"
+      id="authClose"
+      aria-label="Close">
+
+      ×
+
+    </button>
+
+
+    <div class="auth-brand">
+
+      <img
+        src="/assets/bis-sahayak-logo.png"
+        alt="BIS Sahayak">
+
+      <span>
+        SECURE ACCOUNT
+      </span>
+
+    </div>
+
+
+    <h2 id="authTitle">
+      Welcome back
+    </h2>
+
+    <p id="authSubtitle">
+      Sign in to access your private workspace.
+    </p>
+
+
+    <form id="authForm">
+
+      <div
+        class="field"
+        id="nameField">
+
+        <label for="name">
+          Full name
+        </label>
+
+        <input
+          id="name"
+          autocomplete="name"
+          placeholder="Your full name">
+
+      </div>
+
+
+      <div class="field">
+
+        <label for="email">
+          Email address
+        </label>
+
+        <input
+          id="email"
+          type="email"
+          autocomplete="email"
+          placeholder="you@example.com"
+          required>
+
+      </div>
+
+
+      <div class="field">
+
+        <label for="password">
+          Password
+        </label>
+
+        <input
+          id="password"
+          type="password"
+          autocomplete="current-password"
+          placeholder="Minimum 8 characters"
+          required>
+
+      </div>
+
+
+      <button
+        class="btn primary full"
+        id="authSubmit"
+        type="submit">
+
+        Sign in
+
+      </button>
+
+    </form>
+
+
+    <div
+      class="auth-message"
+      id="authMsg">
+    </div>
+
+
+    <button
+      class="switch-auth"
+      id="switchAuth">
+
+      New here? Create an account
+
+    </button>
+
+
+    <div class="auth-safe">
+      🔒 Account requests use the backend authentication API.
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- ================= ACCOUNT MODAL ================= -->
+
+<div
+  class="modal-backdrop"
+  id="accountModal"
+  aria-hidden="true">
+
+  <div
+    class="account-modal"
+    role="dialog"
+    aria-modal="true">
+
+    <button
+      class="modal-close"
+      id="accountClose">
+
+      ×
+
+    </button>
+
+
+    <div
+      class="profile-avatar"
+      id="profileAvatar">
+
+      B
+
+    </div>
+
+
+    <div class="eyebrow">
+      ACCOUNT
+    </div>
+
+
+    <h2 id="profileName">
+      Account
+    </h2>
+
+
+    <p id="profileEmail"></p>
+
+
+    <div class="account-actions">
+
+      <button
+        class="btn ghost full"
+        id="accountRefresh">
+
+        ↻ Refresh session
+
+      </button>
+
+
+      <button
+        class="btn danger full"
+        id="signOutBtn">
+
+        Sign out
+
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<script src="/app.js"></script>
+
+</body>
+</html>
