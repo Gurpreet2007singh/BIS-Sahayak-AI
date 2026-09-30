@@ -1,195 +1,1181 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="BIS Sahayak AI — intelligent guidance for Indian Standards, BIS services and business compliance">
-<title>BIS Sahayak AI</title><link rel="stylesheet" href="/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#071a45">
+  <meta name="description" content="BIS Sahayak AI â€” intelligent guidance for Indian Standards, BIS services and business compliance.">
+  <title>BIS Sahayak AI â€” Business Command Center</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
-<div class="app">
-<div class="mobileOverlay" id="mobileOverlay" onclick="closeSidebar()"></div>
-<aside class="sidebar" id="sidebar">
-<a class="brand" href="#home" onclick="event.preventDefault(); go('home');"><span>B</span><div>BIS Sahayak<small>AI</small></div></a>
-<nav class="sideNav" aria-label="Main navigation">
-<button type="button" data-page="home" class="active" onclick="go('home')"><span>Overview</span></button>
-<button type="button" data-page="assistant" onclick="go('assistant')"><span>AI Assistant</span></button>
-<button type="button" data-page="documents" onclick="go('documents')"><span>Documents</span></button>
-<button type="button" data-page="compliance" onclick="go('compliance')"><span>Compliance</span></button>
-<button type="button" data-page="sources" onclick="go('sources')"><span>Sources &amp; Tools</span></button>
-</nav>
-<div class="sideBottom">
-<button type="button" id="themeBtn" onclick="toggleTheme()"><span>Theme</span></button>
-<button type="button" onclick="openAuth()"><span>Account</span></button>
+
+<div class="app-shell">
+
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+
+  <!-- ================= SIDEBAR ================= -->
+
+  <aside class="sidebar" id="sidebar" aria-label="Primary navigation">
+
+    <div class="brand-row">
+
+      <button
+        class="icon-btn mobile-only"
+        id="closeSidebar"
+        aria-label="Close navigation">
+        Ã—
+      </button>
+
+      <a
+        class="brand"
+        href="#home"
+        data-page="home"
+        aria-label="BIS Sahayak home">
+
+        <span class="brand-mark">
+          <img
+            src="/assets/bis-sahayak-logo.png"
+            alt="BIS Sahayak">
+        </span>
+
+        <span class="brand-copy">
+          <b>BIS Sahayak</b>
+          <small>AI BUSINESS ASSISTANT</small>
+        </span>
+
+      </a>
+
+    </div>
+
+
+    <div class="nav-label">
+      WORKSPACE
+    </div>
+
+    <nav class="side-nav">
+
+      <button data-page="home" class="nav-item">
+        <span class="nav-icon">âŒ‚</span>
+        <span>Overview</span>
+      </button>
+
+      <button data-page="assistant" class="nav-item">
+        <span class="nav-icon">âœ¦</span>
+        <span>AI Assistant</span>
+        <em>AI</em>
+      </button>
+
+      <button data-page="documents" class="nav-item">
+        <span class="nav-icon">â–¤</span>
+        <span>Documents</span>
+      </button>
+
+      <button data-page="compliance" class="nav-item">
+        <span class="nav-icon">âœ“</span>
+        <span>Compliance</span>
+      </button>
+
+      <button data-page="sources" class="nav-item">
+        <span class="nav-icon">â—Ž</span>
+        <span>Sources &amp; Tools</span>
+      </button>
+
+    </nav>
+
+
+    <div class="sidebar-spacer"></div>
+
+
+    <div class="nav-label">
+      PREFERENCES
+    </div>
+
+    <button class="nav-item" id="themeBtn">
+      <span class="nav-icon" id="themeIcon">â˜¾</span>
+      <span>Dark mode</span>
+    </button>
+
+    <button class="nav-item" id="accountSideBtn">
+      <span class="nav-icon">â—‰</span>
+      <span id="accountSideText">Sign in</span>
+    </button>
+
+
+    <div class="sidebar-foot">
+
+    <img
+    src="/assets/dgs-logo.png"
+    alt="DGS Digital Generic Services">
+      <small>
+        Secure workspace â€¢ BIS-focused
+      </small>
+
+    </div>
+
+  </aside>
+
+
+  <!-- ================= MAIN ================= -->
+
+  <main class="main" id="main">
+
+    <!-- TOPBAR -->
+
+    <header class="topbar">
+
+      <div class="topbar-left">
+
+        <button
+          class="icon-btn"
+          id="menuBtn"
+          aria-label="Open navigation"
+          aria-expanded="false">
+          â˜°
+        </button>
+
+        <div>
+
+          <div class="eyebrow" id="pageKicker">
+            BIS SAHAYAK AI
+          </div>
+
+          <h1 id="pageTitle">
+            Business command center
+          </h1>
+
+        </div>
+
+      </div>
+
+
+      <div class="topbar-actions">
+
+        <div class="connection-pill" id="connection">
+
+          <span class="pulse-dot"></span>
+
+          <span>
+            Checkingâ€¦
+          </span>
+
+        </div>
+
+        <button
+          class="avatar-btn"
+          id="accountTopBtn"
+          aria-label="Account">
+          Sign in
+        </button>
+
+      </div>
+
+    </header>
+
+
+    <!-- BACK / HOME -->
+
+    <div class="route-tools">
+
+      <button id="backBtn" class="route-btn">
+        â† Back
+      </button>
+
+      <button id="homeBtn" class="route-btn">
+        âŒ‚ Home
+      </button>
+
+    </div>
+
+
+    <!-- ================= HOME ================= -->
+
+    <section id="home" class="page active">
+
+      <div class="hero-grid">
+
+        <div class="hero-card">
+
+          <div class="hero-glow"></div>
+
+          <div class="hero-content">
+
+            <div class="status-badge">
+
+              <span class="pulse-dot"></span>
+
+              INTELLIGENT COMPLIANCE WORKSPACE
+
+            </div>
+
+
+            <h2>
+              Know what matters.<br>
+              <span>Know what to do next.</span>
+            </h2>
+
+
+            <p>
+              BIS Sahayak brings AI guidance, document tracking,
+              compliance actions and verified BIS sources into one
+              calm, focused workspace.
+            </p>
+
+
+            <div class="hero-actions">
+
+              <button
+                class="btn primary"
+                data-page="assistant">
+
+                Ask BIS Sahayak
+
+                <span>â†’</span>
+
+              </button>
+
+
+              <button
+                class="btn ghost"
+                data-page="documents">
+
+                Open document vault
+
+              </button>
+
+            </div>
+
+
+            <div class="trust-row">
+
+              <span>âœ“ Official-source ready</span>
+
+              <span>âœ“ Secure account flow</span>
+
+              <span>âœ“ Multilingual-ready</span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- AI STATUS -->
+
+        <div class="ai-card">
+
+          <div class="ai-orbit">
+
+            <div class="orbit-dot"></div>
+
+            <div class="ai-logo">
+              âœ¦
+            </div>
+
+          </div>
+
+
+          <div class="mini-eyebrow">
+            AI STATUS
+          </div>
+
+
+          <h3 id="aiStatusTitle">
+            Online + fallback ready
+          </h3>
+
+
+          <p id="aiStatusText">
+            Online AI is used when available.
+            The backend can expose a local fallback when configured.
+          </p>
+
+
+          <div class="flow">
+
+            <span>Question</span>
+
+            <b>â†’</b>
+
+            <span>Evidence</span>
+
+            <b>â†’</b>
+
+            <span>Action</span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- QUICK ACTIONS -->
+
+      <div class="section-head">
+
+        <div>
+
+          <div class="eyebrow">
+            QUICK ACTIONS
+          </div>
+
+          <h2>
+            Everything important, one click away
+          </h2>
+
+        </div>
+
+      </div>
+
+
+      <div class="quick-grid">
+
+        <button
+          class="quick-card"
+          data-page="assistant"
+          data-prompt="What should I verify for my product?">
+
+          <span class="quick-icon blue">
+            âœ¦
+          </span>
+
+          <span>
+
+            <b>
+              Find applicable standard
+            </b>
+
+            <small>
+              Product â†’ evidence â†’ next step
+            </small>
+
+          </span>
+
+          <strong>â†’</strong>
+
+        </button>
+
+
+        <button
+          class="quick-card"
+          data-page="documents">
+
+          <span class="quick-icon violet">
+            â–¤
+          </span>
+
+          <span>
+
+            <b>
+              Document vault
+            </b>
+
+            <small>
+              Track validity and renewal
+            </small>
+
+          </span>
+
+          <strong>â†’</strong>
+
+        </button>
+
+
+        <button
+          class="quick-card"
+          data-page="compliance">
+
+          <span class="quick-icon green">
+            âœ“
+          </span>
+
+          <span>
+
+            <b>
+              Compliance status
+            </b>
+
+            <small>
+              See what needs attention
+            </small>
+
+          </span>
+
+          <strong>â†’</strong>
+
+        </button>
+
+
+        <button
+          class="quick-card"
+          data-page="sources">
+
+          <span class="quick-icon gold">
+            â—Ž
+          </span>
+
+          <span>
+
+            <b>
+              Live sources
+            </b>
+
+            <small>
+              Verify current information
+            </small>
+
+          </span>
+
+          <strong>â†’</strong>
+
+        </button>
+
+      </div>
+
+
+      <!-- FEATURES -->
+
+      <div class="feature-grid">
+
+        <article class="feature-card">
+
+          <span class="feature-num">
+            01
+          </span>
+
+          <h3>
+            Situation-aware AI
+          </h3>
+
+          <p>
+            Ask in natural language and get a clear next action,
+            with source context when the backend provides it.
+          </p>
+
+        </article>
+
+
+        <article class="feature-card">
+
+          <span class="feature-num">
+            02
+          </span>
+
+          <h3>
+            Private workspace
+          </h3>
+
+          <p>
+            Your account token is kept client-side and sent
+            to protected API routes for authenticated dashboard data.
+          </p>
+
+        </article>
+
+
+        <article class="feature-card">
+
+          <span class="feature-num">
+            03
+          </span>
+
+          <h3>
+            Built for real work
+          </h3>
+
+          <p>
+            Documents, compliance tasks and sources stay separated
+            so the interface remains easy to understand.
+          </p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= AI ================= -->
+
+    <section id="assistant" class="page">
+
+      <div class="page-head">
+
+        <div>
+
+          <div class="eyebrow">
+            AI ASSISTANT
+          </div>
+
+          <h2>
+            Ask BIS Sahayak
+          </h2>
+
+          <p>
+            Get concise guidance, then verify important decisions
+            against current official sources.
+          </p>
+
+        </div>
+
+
+        <label class="select-wrap">
+
+          <span>
+            Language
+          </span>
+
+          <select id="lang">
+
+            <option value="en">
+              English
+            </option>
+
+            <option value="hi">
+              Hindi
+            </option>
+
+            <option value="pa">
+              Punjabi
+            </option>
+
+            <option value="auto">
+              Auto detect
+            </option>
+
+          </select>
+
+        </label>
+
+      </div>
+
+
+      <div class="assistant-shell">
+
+        <aside class="assistant-tools">
+
+          <div class="tool-title">
+            START WITH A TEMPLATE
+          </div>
+
+
+          <button
+            class="suggestion"
+            data-prompt="Help me find the applicable Indian Standard for my product.">
+
+            Applicable standard
+
+            <span>â†’</span>
+
+          </button>
+
+
+          <button
+            class="suggestion"
+            data-prompt="Give me a certification preparation checklist.">
+
+            Certification checklist
+
+            <span>â†’</span>
+
+          </button>
+
+
+          <button
+            class="suggestion"
+            data-prompt="How should I check testing laboratory requirements?">
+
+            Testing requirements
+
+            <span>â†’</span>
+
+          </button>
+
+
+          <button
+            class="suggestion"
+            data-prompt="Explain hallmarking for a consumer.">
+
+            Hallmarking
+
+            <span>â†’</span>
+
+          </button>
+
+
+          <button
+            class="suggestion"
+            data-prompt="Review what I should do next for my business compliance.">
+
+            Business guidance
+
+            <span>â†’</span>
+
+          </button>
+
+
+          <label class="live-switch">
+
+            <input
+              id="liveToggle"
+              type="checkbox"
+              checked>
+
+            <span></span>
+
+            Use live sources when available
+
+          </label>
+
+
+          <div class="assistant-note">
+
+            <b>
+              Tip
+            </b>
+
+            <p>
+              For the most useful answer, include your product,
+              business activity, location and what you are trying
+              to complete.
+            </p>
+
+          </div>
+
+        </aside>
+
+
+        <div class="chat-panel">
+
+          <div class="chat-header">
+
+            <div class="bot-avatar">
+              âœ¦
+            </div>
+
+            <div>
+
+              <b>
+                BIS Sahayak
+              </b>
+
+              <small>
+                AI guidance workspace
+              </small>
+
+            </div>
+
+            <span class="online-dot">
+              Online
+            </span>
+
+          </div>
+
+
+          <div
+            class="messages"
+            id="messages">
+
+            <div class="message bot">
+
+              <div class="message-avatar">
+                âœ¦
+              </div>
+
+              <div class="bubble">
+
+                <b>
+                  BIS Sahayak
+                </b>
+
+                <p>
+                  Hi! Tell me what you are trying to do.
+                  Iâ€™ll turn it into a clear next step and flag
+                  where verification is needed.
+                </p>
+
+                <span class="message-time">
+                  Just now
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <form
+            class="chat-form"
+            id="chatForm">
+
+            <input
+              id="chatInput"
+              autocomplete="off"
+              placeholder="Ask about standards, certification, testing, hallmarkingâ€¦">
+
+            <button
+              class="send-btn"
+              type="submit"
+              aria-label="Send">
+
+              â†‘
+
+            </button>
+
+          </form>
+
+
+          <div class="chat-foot">
+            AI guidance can be imperfect.
+            Verify critical requirements against current official BIS information.
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= DOCUMENTS ================= -->
+
+    <section id="documents" class="page">
+
+      <div class="page-head">
+
+        <div>
+
+          <div class="eyebrow">
+            SECURE DOCUMENT VAULT
+          </div>
+
+          <h2>
+            Your business documents
+          </h2>
+
+          <p>
+            Keep important documents visible,
+            searchable and ready for renewal.
+          </p>
+
+        </div>
+
+
+        <button
+          class="btn primary"
+          id="uploadBtn">
+
+          ï¼‹ Upload document
+
+        </button>
+
+        <input
+          id="file"
+          type="file"
+          hidden
+          accept=".pdf,.txt,.png,.jpg,.jpeg,.webp">
+
+      </div>
+
+
+      <div
+        class="stats-grid"
+        id="docStats">
+
+        <div class="stat-card skeleton"></div>
+        <div class="stat-card skeleton"></div>
+        <div class="stat-card skeleton"></div>
+
+      </div>
+
+
+      <div class="table-card">
+
+        <div class="table-head">
+
+          <div>
+
+            <b>
+              Document register
+            </b>
+
+            <small>
+              Authenticated workspace data
+            </small>
+
+          </div>
+
+          <button
+            class="tiny-btn"
+            id="refreshDocs">
+
+            â†» Refresh
+
+          </button>
+
+        </div>
+
+
+        <div class="table-wrap">
+
+          <table>
+
+            <thead>
+
+              <tr>
+
+                <th>
+                  Document
+                </th>
+
+                <th>
+                  Status
+                </th>
+
+                <th>
+                  Expiry
+                </th>
+
+                <th>
+                  Action
+                </th>
+
+              </tr>
+
+            </thead>
+
+            <tbody id="docs"></tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= COMPLIANCE ================= -->
+
+    <section id="compliance" class="page">
+
+      <div class="page-head">
+
+        <div>
+
+          <div class="eyebrow">
+            BUSINESS COMPLIANCE
+          </div>
+
+          <h2>
+            What needs attention?
+          </h2>
+
+          <p>
+            Turn recurring compliance work into a visible action list.
+          </p>
+
+        </div>
+
+
+        <button
+          class="btn primary"
+          id="addTaskBtn">
+
+          ï¼‹ Add task
+
+        </button>
+
+      </div>
+
+
+      <div
+        class="stats-grid"
+        id="compStats">
+      </div>
+
+
+      <div
+        class="task-grid"
+        id="tasks">
+      </div>
+
+    </section>
+
+
+    <!-- ================= SOURCES ================= -->
+
+    <section id="sources" class="page">
+
+      <div class="page-head">
+
+        <div>
+
+          <div class="eyebrow">
+            SOURCES &amp; TOOLS
+          </div>
+
+          <h2>
+            Verify and investigate
+          </h2>
+
+          <p>
+            Keep official BIS references one click away
+            and use configured live search when available.
+          </p>
+
+        </div>
+
+
+        <button
+          class="btn ghost"
+          id="liveSearchBtn">
+
+          âŒ• Live search
+
+        </button>
+
+      </div>
+
+
+      <div
+        id="sourceGrid"
+        class="source-grid">
+      </div>
+
+
+      <div
+        id="liveResults"
+        class="live-results">
+      </div>
+
+    </section>
+
+  </main>
+
 </div>
-</aside>
-<main class="content">
-<header class="top">
-<div class="topLeft"><button type="button" class="menuBtn" id="menuBtn" aria-label="Open navigation" onclick="toggleSidebar()">☰</button>
-<div><span id="pageKicker">BIS SAHAYAK AI</span><h1 id="pageTitle">Business command center</h1></div></div>
-<div class="topActions"><span id="connection" class="pill">Checking connection…</span><button type="button" class="account" onclick="openAuth()">Sign in</button></div>
-</header>
 
-<section id="home" class="page activePage">
-<div class="hero">
-<div>
-<label>INTELLIGENT COMPLIANCE ASSISTANT</label>
-<h2>Know what matters.<br><span>Know what to do next.</span></h2>
-<p>BIS Sahayak connects AI guidance, document tracking, compliance actions and verified BIS sources in one workspace.</p>
-<div class="heroActions">
-<button type="button" class="primary" onclick="go('assistant')">Ask BIS Sahayak →</button>
-<button type="button" class="secondary" onclick="go('documents')">Manage documents</button>
+
+<!-- ================= TOAST ================= -->
+
+<div
+  class="toast-stack"
+  id="toastStack"
+  aria-live="polite">
 </div>
+
+
+<!-- ================= AUTH MODAL ================= -->
+
+<div
+  class="modal-backdrop"
+  id="authModal"
+  aria-hidden="true">
+
+  <div
+    class="auth-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="authTitle">
+
+    <button
+      class="modal-close"
+      id="authClose"
+      aria-label="Close">
+
+      Ã—
+
+    </button>
+
+
+    <div class="auth-brand">
+
+      <img
+        src="/assets/bis-sahayak-logo.png"
+        alt="BIS Sahayak">
+
+      <span>
+        SECURE ACCOUNT
+      </span>
+
+    </div>
+
+
+    <h2 id="authTitle">
+      Welcome back
+    </h2>
+
+    <p id="authSubtitle">
+      Sign in to access your private workspace.
+    </p>
+
+
+    <form id="authForm">
+
+      <div
+        class="field"
+        id="nameField">
+
+        <label for="name">
+          Full name
+        </label>
+
+        <input
+          id="name"
+          autocomplete="name"
+          placeholder="Your full name">
+
+      </div>
+
+
+      <div class="field">
+
+        <label for="email">
+          Email address
+        </label>
+
+        <input
+          id="email"
+          type="email"
+          autocomplete="email"
+          placeholder="you@example.com"
+          required>
+
+      </div>
+
+
+      <div class="field">
+
+        <label for="password">
+          Password
+        </label>
+
+        <input
+          id="password"
+          type="password"
+          autocomplete="current-password"
+          placeholder="Minimum 8 characters"
+          required>
+
+      </div>
+
+
+      <button
+        class="btn primary full"
+        id="authSubmit"
+        type="submit">
+
+        Sign in
+
+      </button>
+
+    </form>
+
+
+    <div
+      class="auth-message"
+      id="authMsg">
+    </div>
+
+
+    <button
+      class="switch-auth"
+      id="switchAuth">
+
+      New here? Create an account
+
+    </button>
+
+
+    <div class="auth-safe">
+      ðŸ”’ Account requests use the backend authentication API.
+    </div>
+
+  </div>
+
 </div>
-<div class="heroAI"><div class="signal"></div><label>AI STATUS</label><h3>Online + Offline ready</h3><p>Online AI is used when available. The configured local Ollama fallback can keep the assistant usable when external AI is unavailable.</p>
-<div class="miniFlow"><i>Question</i><b>→</b><i>Evidence</i><b>→</b><i>Guidance</i></div></div></div>
-<div class="quick">
-<button type="button" onclick="quick('What should I verify for my product?')"><b>Find applicable standard</b><small>Product → evidence → next step</small></button>
-<button type="button" onclick="go('documents')"><b>Document vault</b><small>Track validity and renewal</small></button>
-<button type="button" onclick="go('compliance')"><b>Compliance status</b><small>See what needs action</small></button>
-<button type="button" onclick="go('sources')"><b>Live sources</b><small>Verify current information</small></button>
+
+
+<!-- ================= ACCOUNT MODAL ================= -->
+
+<div
+  class="modal-backdrop"
+  id="accountModal"
+  aria-hidden="true">
+
+  <div
+    class="account-modal"
+    role="dialog"
+    aria-modal="true">
+
+    <button
+      class="modal-close"
+      id="accountClose">
+
+      Ã—
+
+    </button>
+
+
+    <div
+      class="profile-avatar"
+      id="profileAvatar">
+
+      B
+
+    </div>
+
+
+    <div class="eyebrow">
+      ACCOUNT
+    </div>
+
+
+    <h2 id="profileName">
+      Account
+    </h2>
+
+
+    <p id="profileEmail"></p>
+
+
+    <div class="account-actions">
+
+      <button
+        class="btn ghost full"
+        id="accountRefresh">
+
+        â†» Refresh session
+
+      </button>
+
+
+      <button
+        class="btn danger full"
+        id="signOutBtn">
+
+        Sign out
+
+      </button>
+
+    </div>
+
+  </div>
+
 </div>
-<div class="cards">
-<article><small>AI</small><h3>Situation-aware answers</h3><p>The assistant can route questions toward standards, certification, testing, documents or a next action.</p></article>
-<article><small>SECURITY</small><h3>Private workspace</h3><p>Authentication, protected APIs, server-side secrets and rate limits are provided by the application backend.</p></article>
-<article><small>LANGUAGE</small><h3>Multilingual-ready architecture</h3><p>Language selection is separated from business logic so broader multilingual model support can be connected later.</p></article>
-</div>
-</section>
 
-<section id="assistant" class="page">
-<div class="pageIntro"><div><label>AI ASSISTANT</label><h2>Ask anything about BIS</h2><p>Use configured online intelligence when available. The local assistant remains available through the backend fallback.</p></div>
-<select id="lang" aria-label="Response language"><option value="en">English</option><option value="hi">Hindi</option><option value="pa">Punjabi</option><option value="auto">Auto detect</option></select></div>
-<div class="chatLayout"><div class="chatTools">
-<button type="button" onclick="quick('Help me find the applicable Indian Standard for my product.')">Applicable standard</button>
-<button type="button" onclick="quick('Give me a certification preparation checklist.')">Certification</button>
-<button type="button" onclick="quick('How should I check testing laboratory requirements?')">Testing</button>
-<button type="button" onclick="quick('Explain hallmarking for a consumer.')">Hallmarking</button>
-<button type="button" onclick="quick('Review what I should do next for my business compliance.')">Business guidance</button>
-<label class="switch"><input id="liveToggle" type="checkbox" checked> Use live sources when available</label>
-</div><div class="chat"><div id="messages"><div class="bubble bot"><b>BIS Sahayak</b><p>Tell me what you are trying to do. I’ll give you a clear next action and identify when verification is required.</p></div></div>
-<form id="chatForm"><input id="chatInput" autocomplete="off" placeholder="Example: I manufacture an electrical product. What should I verify?"><button type="submit">Send</button></form></div></div>
-</section>
 
-<section id="documents" class="page">
-<div class="pageIntro"><div><label>SECURE DOCUMENT VAULT</label><h2>Your business documents</h2><p>Track document state, expiry and required action from one place.</p></div>
-<div><button type="button" class="primary" onclick="document.getElementById('file').click()">Upload document</button><input id="file" type="file" hidden accept=".pdf,.txt,.png,.jpg,.jpeg"></div></div>
-<div class="stats" id="docStats"></div><div class="tableWrap"><table><thead><tr><th>Document</th><th>Status</th><th>Expiry</th><th>Action</th></tr></thead><tbody id="docs"></tbody></table></div>
-</section>
+<script src="./app.js"></script>
 
-<section id="compliance" class="page">
-<div class="pageIntro"><div><label>BUSINESS COMPLIANCE</label><h2>What needs attention?</h2><p>Keep recurring compliance work visible instead of remembering it manually.</p></div><button type="button" class="primary" onclick="addCompliance()">+ Add task</button></div>
-<div class="stats" id="compStats"></div><div class="taskGrid" id="tasks"></div>
-</section>
+</body>
+</html>
 
-<section id="sources" class="page">
-<div class="pageIntro"><div><label>SOURCES &amp; TOOLS</label><h2>Verify and investigate</h2><p>Official BIS links remain visible. A configured live-search connector can add current web results when enabled.</p></div>
-<button type="button" class="secondary" onclick="liveSearch()">Run live search</button></div>
-<div id="sourceGrid" class="sourceGrid"></div><div id="liveResults" class="liveResults"></div>
-</section>
-</main></div>
-
-<div id="auth" class="modal" role="dialog" aria-modal="true">
-<div class="auth"><button type="button" class="x" aria-label="Close" onclick="closeAuth()">×</button>
-<label>SECURE ACCOUNT</label><h2 id="authTitle">Sign in</h2>
-<input id="name" placeholder="Full name" autocomplete="name" hidden>
-<input id="email" placeholder="Email" autocomplete="email">
-<input id="password" type="password" placeholder="Password (8+ characters)" autocomplete="current-password">
-<button type="button" class="primary full" onclick="submitAuth()">Continue</button><p id="authMsg"></p>
-<button type="button" class="textBtn" onclick="toggleAuth()">Create an account</button>
-</div></div>
-
-<script>
-// Safe Navigation and UI Controller
-function go(pageId) {
-  // Hide all sections
-  document.querySelectorAll('.page').forEach(function(p) {
-    p.classList.remove('activePage');
-  });
-  
-  // Show target section
-  var target = document.getElementById(pageId);
-  if (target) {
-    target.classList.add('activePage');
-  }
-
-  // Update active state in sidebar navigation buttons
-  document.querySelectorAll('.sideNav button').forEach(function(btn) {
-    if (btn.getAttribute('data-page') === pageId) {
-      btn.classList.add('active');
-    } else {
-      btn.classList.remove('active');
-    }
-  });
-
-  // Update header title info dynamically
-  var headerTitles = {
-    home: ['BIS SAHAYAK AI', 'Business command center'],
-    assistant: ['AI ASSISTANT', 'Ask anything about BIS'],
-    documents: ['SECURE DOCUMENT VAULT', 'Your business documents'],
-    compliance: ['BUSINESS COMPLIANCE', 'What needs attention?'],
-    sources: ['SOURCES & TOOLS', 'Verify and investigate']
-  };
-
-  if (headerTitles[pageId]) {
-    var kicker = document.getElementById('pageKicker');
-    var title = document.getElementById('pageTitle');
-    if (kicker) kicker.innerText = headerTitles[pageId][0];
-    if (title) title.innerText = headerTitles[pageId][1];
-  }
-
-  // Auto-close sidebar on mobile view after clicking
-  closeSidebar();
-}
-
-function quick(text) {
-  go('assistant');
-  var input = document.getElementById('chatInput');
-  if (input) {
-    input.value = text;
-    input.focus();
-  }
-}
-
-function toggleSidebar() {
-  var sidebar = document.getElementById('sidebar');
-  var overlay = document.getElementById('mobileOverlay');
-  if (sidebar) sidebar.classList.toggle('open');
-  if (overlay) overlay.classList.toggle('open');
-}
-
-function closeSidebar() {
-  var sidebar = document.getElementById('sidebar');
-  var overlay = document.getElementById('mobileOverlay');
-  if (sidebar) sidebar.classList.remove('open');
-  if (overlay) overlay.classList.remove('open');
-}
-
-function openAuth() {
-  var modal = document.getElementById('auth');
-  if (modal) modal.classList.add('open');
-}
-
-function closeAuth() {
-  var modal = document.getElementById('auth');
-  if (modal) modal.classList.remove('open');
-}
-
-function toggleAuth() {
-  var nameInput = document.getElementById('name');
-  var authTitle = document.getElementById('authTitle');
-  if (nameInput && authTitle) {
-    if (nameInput.hasAttribute('hidden')) {
-      nameInput.removeAttribute('hidden');
-      authTitle.innerText = 'Create an account';
-    } else {
-      nameInput.setAttribute('hidden', 'true');
-      authTitle.innerText = 'Sign in';
-    }
-  }
-}
-
-function toggleTheme() {
-  document.body.classList.toggle('dark-theme');
-}
-</script>
-<script src="/app.js"></script>
-</body></html>
